@@ -27,6 +27,7 @@ RUN apk add --no-cache nginx \
 
 RUN mkdir /www
 RUN echo '<?php phpinfo();' > /www/index.php
+RUN rm -rfv /var/cache/apk/*
 
 COPY nginx-default.conf /etc/nginx/conf.d/default.conf
 COPY start.sh /start.sh
